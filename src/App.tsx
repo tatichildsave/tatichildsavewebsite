@@ -113,12 +113,6 @@ function AppContent() {
       </a>
       <Header />
       <main id="main-content" tabIndex={-1} className="flex-1 w-full pt-20">
-        {activeTab !== "home" && activeTab !== "register" && (
-          <div className="demo-banner">
-            Development preview · Learning progress and dashboards use demo
-            data. No enrolment is submitted.
-          </div>
-        )}
         {renderActiveScreen()}
       </main>
       <Footer />
