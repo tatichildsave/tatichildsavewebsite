@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect } from "react";
+import { inject } from "@vercel/analytics";
 import { Provider } from "react-redux";
 import { setActiveTab, NavTab } from "./store/uiSlice";
 import { store, useAppDispatch, useAppSelector } from "./store";
@@ -16,6 +17,8 @@ import { ApplicationPage } from "./components/registration/ApplicationPage";
 import { LearnerApp } from "./components/learner/LearnerApp";
 import { ParentDashboard } from "./components/parent/ParentDashboard";
 import { WorkspaceSyncModal } from "./components/workspace/WorkspaceSyncModal";
+
+inject();
 
 function AppContent() {
   const dispatch = useAppDispatch();
