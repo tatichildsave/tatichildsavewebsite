@@ -1,0 +1,138 @@
+[
+  {
+    "filename": "aca.png",
+    "dimensions": "1448 \u00d7 1086",
+    "section": "Academy pathway",
+    "type": "Complete card composite",
+    "implementation": "Extract right-side portrait only; HTML provides all titles and benefits.",
+    "display": "academy.webp, 155\u2013200px tall, contain; no face crop"
+  },
+  {
+    "filename": "all.png",
+    "dimensions": "2178 \u00d7 722",
+    "section": "Optional hero journey",
+    "type": "Four-step illustrated composite with embedded labels",
+    "implementation": "Not used: hero.png already contains the learning journey.",
+    "display": "If needed, contain at 320\u2013420px; no duplicate labels"
+  },
+  {
+    "filename": "b1719e9c-1b1c-4ee1-9cd4-87fc8fdabd7e.png",
+    "dimensions": "1448 \u00d7 1086",
+    "section": "Hero alternative",
+    "type": "Children/workbook composite",
+    "implementation": "Not used: approved hero.png matches reference more closely.",
+    "display": "Contain; preserve both faces, jar and workbook"
+  },
+  {
+    "filename": "boy.png",
+    "dimensions": "1122 \u00d7 1402",
+    "section": "Smart Spending learning card",
+    "type": "Portrait photograph with illustrated accents",
+    "implementation": "Portrait extraction; semantic HTML handles copy.",
+    "display": "smart-spending.webp, 100px-wide visual, contain"
+  },
+  {
+    "filename": "foo.png",
+    "dimensions": "2153 \u00d7 730",
+    "section": "Founding Family CTA",
+    "type": "Full-width composite with embedded heading, copy and button",
+    "implementation": "Extract mother/child and separate decorative note; recreate central copy/button in HTML.",
+    "display": "family.webp at 280\u2013350px; closing-note.webp at 210px; contain"
+  },
+  {
+    "filename": "girl gh.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Saving for Goals + lesson decoration",
+    "type": "Photograph and goal illustration composite",
+    "implementation": "Extract piggy-bank illustration and book decoration.",
+    "display": "saving-goals.webp 90px; lesson-decor.webp 160px; contain"
+  },
+  {
+    "filename": "girl.png",
+    "dimensions": "1122 \u00d7 1402",
+    "section": "Borrowing Basics learning card",
+    "type": "Tablet-learner portrait",
+    "implementation": "Portrait extraction; retain face and tablet.",
+    "display": "borrowing.webp 100px wide; contain"
+  },
+  {
+    "filename": "hero cedi.png",
+    "dimensions": "2172 \u00d7 724",
+    "section": "Hero alternative",
+    "type": "Wide children/learning composite",
+    "implementation": "Not used: short panoramic aspect leaves children too small in split hero.",
+    "display": "Contain at natural 3:1; do not stretch"
+  },
+  {
+    "filename": "hero.png",
+    "dimensions": "1672 \u00d7 941",
+    "section": "Homepage hero",
+    "type": "Children, workbook, jar, progress and journey composite",
+    "implementation": "Use directly; no additional overlaid text or competing graphics.",
+    "display": "hero.webp; desktop 700px, mobile full width; contain; no face/workbook/jar crop"
+  },
+  {
+    "filename": "hero1.png",
+    "dimensions": "1774 \u00d7 887",
+    "section": "Hero alternative",
+    "type": "Hero composite with embedded TATI brand",
+    "implementation": "Not used: duplicates the accessible header logo and product name.",
+    "display": "Contain only if replacing complete hero treatment"
+  },
+  {
+    "filename": "kid 1.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Needs vs Wants + Growing Good Habits",
+    "type": "Boy with aspirational financial illustrations",
+    "implementation": "Extract central portrait and separate growth illustration.",
+    "display": "needs-wants.webp / good-habits.webp at 100px wide; contain"
+  },
+  {
+    "filename": "kids.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Club pathway",
+    "type": "Group-learning photograph with illustration",
+    "implementation": "Use directly as lower card photo panel.",
+    "display": "club.webp; cover at 2:1, bottom/center; preserve all four children"
+  },
+  {
+    "filename": "safety.png",
+    "dimensions": "2153 \u00d7 730",
+    "section": "Money Safety card",
+    "type": "Complete learning card with embedded text",
+    "implementation": "Extract right-side child/lock only; use HTML title and description.",
+    "display": "money-safety.webp 110px wide; contain"
+  },
+  {
+    "filename": "save png.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Optional savings progress",
+    "type": "Transparent graphic with embedded wording",
+    "implementation": "Not used: same goal graphic already appears in hero composite.",
+    "display": "Contain at 170\u2013220px if reused; no duplicate copy"
+  },
+  {
+    "filename": "save.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Optional savings progress",
+    "type": "Opaque goal/progress composite",
+    "implementation": "Not used: transparent alternative is cleaner and hero already supplies it.",
+    "display": "Contain; do not stack with duplicate progress graphic"
+  },
+  {
+    "filename": "school.png",
+    "dimensions": "1536 \u00d7 1024",
+    "section": "Schools & partners",
+    "type": "Teacher and three learners photograph",
+    "implementation": "Use directly in a rounded photo panel; preserve faces.",
+    "display": "school.webp 300\u2013380px; cover at 3:2"
+  },
+  {
+    "filename": "self.png",
+    "dimensions": "1254 \u00d7 1254",
+    "section": "Self-Paced pathway",
+    "type": "Complete card with embedded copy and tablet learner",
+    "implementation": "Extract right-side learner/tablet; recreate copy in HTML.",
+    "display": "self-paced.webp at 155\u2013200px tall; contain"
+  }
+]

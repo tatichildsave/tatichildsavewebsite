@@ -1,0 +1,7 @@
+{
+  "name": "TATI ChildSave",
+  "description": "Smart money habits start young. Empowering children aged 8–12 across Africa with interactive money quests, financial capability, and lifelong habits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
