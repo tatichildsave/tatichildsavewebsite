@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useAppDispatch } from "../../store";
 import { setActiveTab, NavTab } from "../../store/uiSlice";
+import { LEARNING_PORTAL_URL } from "../../config/application";
 export const Footer = () => {
   const dispatch = useAppDispatch();
   return (
@@ -44,6 +45,15 @@ export const Footer = () => {
                 <ArrowUpRight size={15} />
               </button>
             ))}
+            <a
+              href={LEARNING_PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              Learning Portal
+              <ArrowUpRight size={15} />
+            </a>
           </div>
           <div className="footer-statement">
             Small lessons.

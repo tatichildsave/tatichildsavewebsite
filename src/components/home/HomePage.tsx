@@ -21,7 +21,7 @@ import {
 import { useAppDispatch } from "../../store";
 import { setActiveTab } from "../../store/uiSlice";
 import { updateActiveForm } from "../../store/registrationSlice";
-import { APPLICATION_FORM_URL } from "../../config/application";
+import { APPLICATION_FORM_URL, LEARNING_PORTAL_URL } from "../../config/application";
 import { FoundingFamilies } from "./FoundingFamilies";
 import { GhcChallenge } from "./GhcChallenge";
 import { MoneySkillsExplorer } from "./MoneySkillsExplorer";
@@ -405,6 +405,21 @@ export function HomePage() {
               Brighter tomorrows.<span aria-hidden="true">☀</span>
             </span>
           </div>
+        </div>
+      </section>
+      <section className="ref-returning-user ref-wrap">
+        <div className="ref-returning-user-content">
+          <div className="ref-kicker ref-dot">RETURNING USER</div>
+          <h2>Already part of the TATI family?</h2>
+          <p>Your next money adventure is waiting!</p>
+          <a
+            className="ref-button"
+            href={LEARNING_PORTAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Continue Learning <ArrowRight size={17} />
+          </a>
         </div>
       </section>
       <section className="ref-schools ref-wrap">
