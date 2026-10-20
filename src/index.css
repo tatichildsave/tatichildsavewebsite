@@ -1507,6 +1507,9 @@ p {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .lesson-layout > div > p {
+    max-width: none;
+  }
   .choice-card {
     transform: none;
     padding: 22px;
