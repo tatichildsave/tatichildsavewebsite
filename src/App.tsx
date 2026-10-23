@@ -128,8 +128,8 @@ function AppContent() {
       <main id="main-content" tabIndex={-1} className="flex-1 w-full pt-20">
         {["learner", "parent-dashboard", "workspace"].includes(activeTab) && (
           <div className="demo-banner">
-            Development preview · Learning progress and dashboards use demo
-            data. No enrolment is submitted.
+            Learning progress and dashboards use demo data. No enrolment is
+            submitted.
           </div>
         )}
         {renderActiveScreen()}
