@@ -1496,11 +1496,9 @@ p {
   .step h3 {
     margin: 5px 0 9px;
     font-size: 15px;
-    grid-column: 2;
   }
   .step p {
     max-width: none;
-    grid-column: 2;
   }
   .lesson-section {
     padding: 50px 0;
@@ -1508,9 +1506,6 @@ p {
   .lesson-layout {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-  .lesson-layout > div > p {
-    max-width: none;
   }
   .choice-card {
     transform: none;

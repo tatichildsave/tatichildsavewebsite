@@ -3,24 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect } from "react";
-import { inject } from "@vercel/analytics";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { setActiveTab, NavTab } from "./store/uiSlice";
 import { store, useAppDispatch, useAppSelector } from "./store";
-import { Header } from "./components/common/Header";
+import { GuidedHeader as Header } from "./components/common/GuidedHeader";
 import { Footer } from "./components/common/Footer";
 import { ToastContainer } from "./components/common/Toast";
 import { InfoPage } from "./components/home/InfoPage";
-import { HomePage } from "./components/home/HomePage";
+import { GuidedHomePage as HomePage } from "./components/home/GuidedHomePage";
+import { PreviewDestination } from "./components/home/PreviewDestination";
 import { ApplicationPage } from "./components/registration/ApplicationPage";
 import { LearnerApp } from "./components/learner/LearnerApp";
 import { ParentDashboard } from "./components/parent/ParentDashboard";
 import { WorkspaceSyncModal } from "./components/workspace/WorkspaceSyncModal";
 
-inject();
-
 function AppContent() {
+  const [routeHash, setRouteHash] = useState(window.location.hash);
   const dispatch = useAppDispatch();
   const { activeTab } = useAppSelector((state) => state.ui);
   const { isDarkMode } = useAppSelector((state) => state.theme);
@@ -28,6 +27,9 @@ function AppContent() {
   useEffect(() => {
     const routes = [
       "home",
+      "for-parents",
+      "curriculum",
+      "try-a-lesson",
       "junior",
       "academy",
       "tati-club",
@@ -39,7 +41,8 @@ function AppContent() {
       "workspace",
     ];
     const onPop = () => {
-      const tab = window.location.hash.slice(1);
+      setRouteHash(window.location.hash);
+      const tab = window.location.hash.slice(1).split("/")[0];
       dispatch(setActiveTab((routes.includes(tab) ? tab : "home") as NavTab));
     };
     window.addEventListener("popstate", onPop);
@@ -50,12 +53,15 @@ function AppContent() {
     };
   }, [dispatch]);
   useEffect(() => {
-    if (window.location.hash !== "#" + activeTab)
+    if (window.location.hash.slice(1).split("/")[0] !== activeTab)
       window.history.pushState(null, "", "#" + activeTab);
     document.title =
       "TATI ChildSave — " +
       ({
         home: "Little lessons. Lifelong confidence.",
+        "for-parents": "For Parents",
+        curriculum: "Our Curriculum",
+        "try-a-lesson": "Try a Lesson",
         register: "Explore enrolment",
         learner: "Learning preview",
         "parent-dashboard": "Parent preview",
@@ -78,6 +84,10 @@ function AppContent() {
 
   const renderActiveScreen = () => {
     switch (activeTab) {
+      case "for-parents":
+      case "curriculum":
+      case "try-a-lesson":
+        return <PreviewDestination key={routeHash} page={activeTab} />;
       case "register":
         return <ApplicationPage />;
       case "learner":
@@ -116,6 +126,12 @@ function AppContent() {
       </a>
       <Header />
       <main id="main-content" tabIndex={-1} className="flex-1 w-full pt-20">
+        {["learner", "parent-dashboard", "workspace"].includes(activeTab) && (
+          <div className="demo-banner">
+            Development preview · Learning progress and dashboards use demo
+            data. No enrolment is submitted.
+          </div>
+        )}
         {renderActiveScreen()}
       </main>
       <Footer />

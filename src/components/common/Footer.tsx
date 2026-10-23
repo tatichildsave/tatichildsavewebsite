@@ -2,7 +2,6 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useAppDispatch } from "../../store";
 import { setActiveTab, NavTab } from "../../store/uiSlice";
-import { LEARNING_PORTAL_URL } from "../../config/application";
 export const Footer = () => {
   const dispatch = useAppDispatch();
   return (
@@ -32,12 +31,23 @@ export const Footer = () => {
             </p>
           </div>
           <div className="footer-links">
+            <a
+              href="https://tati-childsave-mvp.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="guided-text-link"
+            >
+              Learning Portal ↗
+            </a>
             {(
               [
-                ["Our approach", "about"],
+                ["Home", "home"],
+                ["For Parents", "for-parents"],
+                ["Our Curriculum", "curriculum"],
+                ["About TATI", "about"],
                 ["Learning pathways", "junior"],
                 ["For schools", "for-schools"],
-                ["Try a lesson", "learner"],
+                ["Try a Lesson", "try-a-lesson"],
               ] as [string, NavTab][]
             ).map(([label, tab]) => (
               <button key={tab} onClick={() => dispatch(setActiveTab(tab))}>
@@ -45,17 +55,17 @@ export const Footer = () => {
                 <ArrowUpRight size={15} />
               </button>
             ))}
-            <a
-              href={LEARNING_PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link"
-            >
-              Learning Portal
-              <ArrowUpRight size={15} />
-            </a>
           </div>
           <div className="footer-statement">
+            <a
+              href="https://tati-childsave-mvp.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: 13 }}
+            >
+              Learning Portal ↗
+            </a>
+            <br />
             Small lessons.
             <br />
             <em>Brighter futures.</em>

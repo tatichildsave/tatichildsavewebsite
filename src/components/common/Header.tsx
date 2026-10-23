@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { setActiveTab, NavTab } from "../../store/uiSlice";
-import { APPLICATION_FORM_URL, LEARNING_PORTAL_URL } from "../../config/application";
+import { APPLICATION_FORM_URL } from "../../config/application";
 export const Header = () => {
   const dispatch = useAppDispatch();
   const active = useAppSelector((s) => s.ui.activeTab);
@@ -55,14 +55,6 @@ export const Header = () => {
               {label}
             </button>
           ))}
-          <a
-            className="header-cta"
-            href={LEARNING_PORTAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learning Portal <ArrowUpRight size={16} />
-          </a>
           <a
             className="header-cta"
             href={APPLICATION_FORM_URL}

@@ -2,6 +2,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type NavTab =
   | "home"
+  | "for-parents"
+  | "curriculum"
+  | "try-a-lesson"
   | "junior"
   | "academy"
   | "tati-club"
@@ -40,6 +43,9 @@ interface UIState {
 
 const routeTabs: NavTab[] = [
   "home",
+  "for-parents",
+  "curriculum",
+  "try-a-lesson",
   "junior",
   "academy",
   "tati-club",
@@ -51,7 +57,9 @@ const routeTabs: NavTab[] = [
   "workspace",
 ];
 const initialHash =
-  typeof window === "undefined" ? "" : window.location.hash.slice(1);
+  typeof window === "undefined"
+    ? ""
+    : window.location.hash.slice(1).split("/")[0];
 const initialState: UIState = {
   activeTab: routeTabs.includes(initialHash as NavTab)
     ? (initialHash as NavTab)

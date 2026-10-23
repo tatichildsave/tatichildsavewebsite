@@ -4,3 +4,5 @@ import './index.css';
 import './visual-refinement.css';
 
 createRoot(document.getElementById('root')!).render(<App />);
+
+import './guided-home.css';
