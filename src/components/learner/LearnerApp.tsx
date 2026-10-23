@@ -11,6 +11,8 @@ import { addToast, setActiveTab } from '../../store/uiSlice';
 import { MoneyQuestGame } from './MoneyQuestGame';
 import { CurriculumModule } from '../../types';
 
+const FREE_PREVIEW_MODULE_LIMIT = 4;
+
 export const LearnerApp: React.FC = () => {
   const dispatch = useAppDispatch();
   const {
@@ -173,7 +175,8 @@ export const LearnerApp: React.FC = () => {
                 12 Progressive Modules
               </span>
               {CURRICULUM_MODULES.map((m) => {
-                const isUnlocked = unlockedModules.includes(m.id);
+                const isUnlocked =
+                  m.id <= FREE_PREVIEW_MODULE_LIMIT && unlockedModules.includes(m.id);
                 const isDone = completedModules.includes(m.id);
                 const isSelected = activeModuleId === m.id;
 
@@ -227,6 +230,22 @@ export const LearnerApp: React.FC = () => {
                   </div>
                 );
               })}
+
+              {CURRICULUM_MODULES.length > FREE_PREVIEW_MODULE_LIMIT && (
+                <div className="mt-4 p-4 rounded-2xl bg-primary-fixed/20 border border-primary/20 text-center space-y-3">
+                <p className="text-xs sm:text-sm text-on-surface font-semibold">
+                  Modules {FREE_PREVIEW_MODULE_LIMIT + 1}–{CURRICULUM_MODULES.length} are part of the full program. Join our program to learn more about all 12 modules.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => dispatch(setActiveTab('register'))}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container text-on-primary text-xs font-bold shadow-md hover:bg-primary transition-all"
+                >
+                  <span>Join Our Program</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                </div>
+              )}
             </div>
 
             {/* Right Active Module Interactive Player */}
@@ -367,7 +386,7 @@ export const LearnerApp: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => {
-                      if (activeModule.id < 12) {
+                      if (activeModule.id < FREE_PREVIEW_MODULE_LIMIT) {
                         setActiveModuleId(activeModule.id + 1);
                         setSelectedDecideOption(null);
                       }
